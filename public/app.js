@@ -14,7 +14,6 @@ async function login(e) {
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json",
-				// 'Content-Type': 'application/x-www-form-urlencoded',
 			},
 			body: JSON.stringify(payload)
 		}).then(res => res.json())
@@ -34,7 +33,6 @@ function initSocket(token, user) {
 	})
 
 	const msgInput = document.querySelector('#message')
-	// const nameInput = document.querySelector('#name')
 	const chatRoom = document.querySelector('#room')
 	const activity = document.querySelector('.activity')
 	const usersList = document.querySelector('.user-list')
@@ -43,7 +41,7 @@ function initSocket(token, user) {
 
 	function sendMessage(e) {
 		e.preventDefault()
-		if (/* user.name &&  */msgInput.value && chatRoom.value) {
+		if (msgInput.value && chatRoom.value) {
 			socket.emit('message', {
 				name: user.name,
 				text: msgInput.value
@@ -55,7 +53,7 @@ function initSocket(token, user) {
 
 	function enterRoom(e) {
 		e.preventDefault()
-		if (/* user.name &&  */chatRoom.value) {
+		if (chatRoom.value) {
 			socket.emit('enterRoom', {
 				name: user.name,
 				room: chatRoom.value
