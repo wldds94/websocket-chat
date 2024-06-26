@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+        integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+	<div class="chat-login">
+		<form class="form-login">
+			<input type="text" id="email" placeholder="Your email" size="15" required autocomplete="username">
+			<input type="password" id="password" placeholder="Your password" size="15" required autocomplete="current-password">
+			<button id="signin" type="submit">Login</button>
+		</form>
+	</div>
+
+    <main>
+        <form class="form-join">
+			<!-- <input type="text" id="name" maxlength="8" placeholder="Your name" size="5" required> -->
+			<input type="text" id="room" placeholder="Chat room" size="5" required>
+			<button id="join" type="submit">Join</button>
+		</form>
+
+		<ul class="chat-display"></ul>
+
+		<p class="user-list"></p>
+
+		<p class="room-list"></p>
+
+		<p class="activity"></p>
+
+		<form class="form-msg">
+			<input type="text" id="message" placeholder="Your message" required>
+			<button type="submit">Send</button>
+		</form>
+    </main>
+</body>
+
+</html>
